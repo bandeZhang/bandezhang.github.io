@@ -1,13 +1,16 @@
 <!DOCTYPE html>
+<html lang="en">
+
 <head>
     <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <title>地图坐标拾取器</title>
- <!--
     <style type="text/css">
     .line {
         margin-bottom: 20px;
     }
     /* 复制提示 */
+    
     .copy-tips {
         position: fixed;
         z-index: 999;
@@ -40,42 +43,20 @@
     .space-left{
     	margin-left: 35px;
     }
-   
     #map {
         height: 100%
     }
     </style>
--->
-    <style type="text/css">
-    html {
-        height: 100%
-    }
-
-    body {
-        height: 100%;
-        margin: 0px;
-        padding: 0px;
-        background-color: bisque;
-    }
-
-   
-    #map {
-        height: 100%
-    }
-   
-    </style>
-
     <meta name="description" content="地图坐标拾取器，坐标定位，坐标转换器">
-    
+    <meta name="author" content="giscafer">
     <!--页面更好的在移动平台上展示-->
-    <!--
     <meta name="viewport" content="initial-scale=1.1,user-scalable=no">
     <meta name="keywords" content="gis520地图,GIS520,地图坐标拾取器,地图坐标转换器">
-    -->
-    
-    <link rel="stylesheet" href="bootstrap-3.3.7-dist/css/bootstrap.min.css">
-    <script src="bootstrap-3.3.7-dist/js/bootstrap.min.js"></script>
-   
+    <link rel="shortcut icon" href="http://www.gis520.com/favicon.ico">
+    <link rel="stylesheet" href="http://cdn.static.runoob.com/libs/bootstrap/3.3.7/css/bootstrap.min.css">  
+    <script src="http://cdn.static.runoob.com/libs/jquery/2.1.1/jquery.min.js"></script>
+    <script src="http://cdn.static.runoob.com/libs/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script src="http://code.jquery.com/jquery-2.0.1.min.js"></script>
     <script src="http://webapi.amap.com/maps?v=1.3&key=b8de4cd1c32ebd939282e7fb176429b3" type="text/javascript"></script>
     <script type="text/javascript" src="js/jquery.zclip.js"></script>
     <script src="js/LnglatWidget.js"></script>
@@ -141,9 +122,7 @@
 </head>
 
 <body onload="init()">
-    
-
- <!--   <div style="float: left;width: 35%">
+    <div style="float: left;width: 35%">
         <div style="background-color: bisque;">
             &nbsp;&nbsp;<img src="images/logo.png" />
         </div>
@@ -158,7 +137,7 @@
                 <input id="searchTxt" name="search" value="" />&nbsp;&nbsp;
                 <input id="search" type="button" value="搜索" />
                 <!-- <p class="space-left">提示：地名搜索仅支持国内城市</p>  -->
-  <!--          </div>
+            </div>
             <br />
             <br />
             <br />
@@ -168,7 +147,7 @@
                 <input id="lnglatTxt" type="text" class="input" name="lnglatTxt" />&nbsp;&nbsp;
                 <button type="button" class="copy-input" onclick="LnglatWidget.clipBoard()">复制坐标</button>
                 <!--<a href="#" class="copy-input" onclick="LnglatWidget.clipBoard()">复制坐标</a>-->
-   <!--         </div>
+            </div>
         </div>
         <footer style="position:absolute;bottom:0px;">
             <p style="background-color: bisque;">&nbsp;&nbsp;<a href="http://www.gis520.com">GIS520社区</a>&nbsp;&nbsp;&nbsp;源码：<a href="https://github.com/gis520/LngLatPicker" target="_blank">Fork in Github</a></p>
@@ -177,65 +156,6 @@
             </p>
         </footer>
     </div>
-    -->
-
-    <!--             第一列：列表列        -->
-<div id="f1" style="float:left;width:10%;background-color:#FFFFFF">
-<ul class="nav nav-pills nav-stacked">
-    <li class="active"><a href="#"  style="height:60px;vertical-align: middle; ">图书馆</a></li>
-    <li><a href="#" style="height:60px">AAAAA</a></li>
-    <li><a href="#"  style="height:60px">BBBBB</a></li>
-    <li><a href="#"  style="height:60px">CCCCC</a></li>
-    <li><a href="#"  style="height:60px">DDDDD</a></li>
-    <li><a href="#"  style="height:60px">EEEEE</a></li>
-    </ul>
-</div>
-
-<!--             第二列：编辑列        -->
-<div id="f2" style="float:left;width:25%;background-color:#00FFFF">
-  
-
-  </br>
-</br>
-                             <!--             搜索行        -->
-<div>
-  <input type="text" class="form-control" id="name" 
-               placeholder="地名搜索" style="float:left;width:60%">
-  <button type="button" class="btn btn-primary" style="float:left;width:40%">地名搜索</button>
-  </div>
-
-  </br>
-  </br>
-  </br>
-
-  <div>
-  <input type="text" class="form-control" id="name" 
-               placeholder="坐标搜索" style="float:left;width:60%">
-  <button type="button" class="btn btn-primary" style="float:left;width:40%">坐标搜索</button>
-  </div>
-
-</br>
-  </br>
-  </br>
-                             <!--             选取坐标行        -->
-  <img src="1.png" alt="guide" style="margin:0 auto;">
-  </br>
-  <button type="button" class="btn btn-primary" style="margin:0 auto;">完成</button>
-  <button type="button" class="btn btn-warning" style="margin:0 auto;">删除</button>
-
-</br>
-  </br>
-  </br>
-<button type="button" class="btn btn-success">   上传音频   </button>
-
-</br>
-  </br>
-  </br>
-<button type="button" class="btn btn-success">   上传图片   </button>
-</div>
-
-
-
     <div id="map" style="float: right;width: 65%">
     </div>
 </body>
